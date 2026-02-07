@@ -1,0 +1,31 @@
+{
+  "name": "clean-architecture",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --watch 'src/**/*.ts' --exec 'tsx' src/main.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allanalvescs/clean-architecture.git"
+  },
+  "author": "Allan <allanalcarsou2@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/allanalvescs/clean-architecture/issues"
+  },
+  "homepage": "https://github.com/allanalvescs/clean-architecture#readme",
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.2.1",
+    "nodemon": "^3.1.11",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "uuid": "^13.0.0"
+  }
+}
