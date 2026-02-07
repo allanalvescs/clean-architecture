@@ -1,13 +1,11 @@
 import { UserCreateDto } from "../../app/dtos/userCreateDto";
-import { UserUpdateDto } from "../../app/dtos/userUpdateDto";
 import { User } from "../../domain/entities/User";
 import { IUserRepository } from "../../domain/repository/IUserRepository";
 
 export class UserRepositoryInMemory implements IUserRepository {
     private users: User[] = [];
     
-    async save(dto: UserCreateDto): Promise<User> {
-        const user = new User(dto.name, dto.email, dto.password);
+    async save(user: User): Promise<User> {
         this.users.push(user);
 
         return user;
@@ -19,6 +17,10 @@ export class UserRepositoryInMemory implements IUserRepository {
 
     async findById(id: string): Promise<User | null> {
         return this.users.find((user) => user.id === id) || null;
+    }
+
+    async findByEmail(email: string): Promise<User | null> {
+        return this.users.find((user) => user.email === email) || null;
     }
 
     async update(id: string, user: User): Promise<boolean> {
