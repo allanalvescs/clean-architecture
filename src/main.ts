@@ -1,5 +1,5 @@
 import express from "express";
-import { AliveRouter } from "./domain/routes/alive";
+import { AliveRouter } from "./infra/routes/alive";
 
 const app = express();
 
