@@ -8,7 +8,7 @@ export class UserFindOneUseCase {
         const user = await this.repository.findById(id);
 
         if (!user) {
-            throw new Error("User not found");
+            throw new Error("usuário não encontrado");
         }
 
         return user;

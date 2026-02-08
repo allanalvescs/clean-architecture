@@ -9,7 +9,7 @@ export class UserCreateUseCase {
         const user = await this.repository.findByEmail(data.email);
 
         if (user) {
-            throw new Error("User already exists");
+            throw new Error("Usuário já cadastrado com esse email");
         }
 
         const newUser = new User(null, data.name, data.email, data.password);

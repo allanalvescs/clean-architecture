@@ -9,7 +9,7 @@ export class UserUpdateUseCase {
         const user = await this.repository.findById(id);
 
         if (!user) {
-            throw new Error("User not found")
+            throw new Error("Usuário não encontrado");
         };
 
         const updateUser = new User(id, data.name, data.email, user.password);
